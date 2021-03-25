@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint '**/*.{ts,tsx}'",
+    "lint": "eslint '**/*.{ts,tsx}' --max-warnings 0",
     "lint:fix": "eslint --fix '**/*.{ts,tsx}'",
     "format": "prettier --write '**/*.{ts,tsx,css}'",
-    "format:check": "prettier --check '**/*.{ts,tsx,css}'"
+    "format:check": "prettier --check '**/*.{ts,tsx,css}'",
+    "prepare": "husky install",
+    "precommit": "yarn lint && yarn format:check"
   },
   "dependencies": {
     "next": "10.0.9",
@@ -27,6 +29,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.2.0",
     "prettier": "^2.2.1",
     "typescript": "^4.2.3"
   }
